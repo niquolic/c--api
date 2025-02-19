@@ -17,6 +17,11 @@ namespace LibraryAPI.Controllers
             _userService = userService;
         }
 
+        /// <summary>
+        /// Get a list of users
+        /// </summary>
+        /// <param name="currentUser">The current user</param>
+        /// <returns>A list of users</returns>
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetUsers([FromBody] User currentUser)
         {
@@ -36,6 +41,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Add a user
+        /// </summary>
+        /// <param name="user">The user to add</param>
+        /// <returns>The added user</returns>
         [HttpPost]
         public async Task<ActionResult<User>> PostUser([FromBody] User user)
         {
@@ -50,6 +60,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete a user
+        /// </summary>
+        /// <param name="id">The ID of the user to delete</param>
+        /// <returns>No content</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

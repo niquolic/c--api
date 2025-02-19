@@ -16,9 +16,9 @@ namespace LibraryAPI.Services
             _context = context;
         }
 
-        public async Task<IQueryable<Book>> GetBooksAsync(string author = null, int? year = null, int? categoryId = null, int? publisherId = null, string sortBy = "Title", bool isDescending = false)
+        public async Task<IQueryable<Book>> GetBooksAsync(string? author = null, int? year = null, int? categoryId = null, int? publisherId = null, string? sortBy = null, bool isDescending = false)
         {
-            var query = _context.Books.Include(b => b.CategoryId).Include(b => b.PublisherId).AsQueryable();
+            var query = _context.Books.AsQueryable();
 
             if (!string.IsNullOrEmpty(author))
                 query = query.Where(b => b.Author.Contains(author));
@@ -32,7 +32,18 @@ namespace LibraryAPI.Services
             if (publisherId.HasValue)
                 query = query.Where(b => b.PublisherId == publisherId.Value);
 
-            query = isDescending ? query.OrderByDescending(b => EF.Property<object>(b, sortBy)) : query.OrderBy(b => EF.Property<object>(b, sortBy));
+            if (!string.IsNullOrEmpty(sortBy) && typeof(Book).GetProperty(sortBy) != null)
+            {
+                query = isDescending
+                    ? query.OrderByDescending(b => EF.Property<object>(b, sortBy))
+                    : query.OrderBy(b => EF.Property<object>(b, sortBy));
+            }
+            else
+            {
+                query = isDescending 
+                    ? query.OrderByDescending(b => b.Title) 
+                    : query.OrderBy(b => b.Title);
+            }
 
             return query;
         }

@@ -18,6 +18,11 @@ namespace LibraryAPI.Controllers
             _loanService = loanService;
         }
 
+        /// <summary>
+        /// Add a loan
+        /// </summary>
+        /// <param name="loan">The loan to add</param>
+        /// <returns>The added loan</returns>
         [HttpPost]
         public async Task<ActionResult<Loan>> AddLoan([FromBody] Loan loan)
         {
@@ -32,6 +37,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Update a loan with the return date
+        /// </summary>
+        /// <param name="id">The ID of the loan</param>
+        /// <param name="returnDate">The return date</param>
         [HttpPut("{id}/return")]
         public async Task<IActionResult> ReturnLoan(int id, [FromBody] DateTime returnDate)
         {
@@ -46,6 +56,13 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of loans
+        /// </summary>
+        /// <param name="borrowerName">The name of the borrower</param>
+        /// <param name="bookId">The ID of the book</param>
+        /// <param name="borrowDate">The borrow date</param>
+        /// <returns>A list of loans</returns>
         [HttpGet]
         public async Task<ActionResult<IQueryable<Loan>>> GetLoans(
             [FromQuery] string borrowerName = null,

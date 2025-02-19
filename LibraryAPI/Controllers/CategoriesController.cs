@@ -17,6 +17,10 @@ namespace LibraryAPI.Controllers
             _categoryService = categoryService;
         }
 
+        /// <summary>
+        /// Get a list of categories
+        /// </summary>
+        /// <returns>A list of categories</returns>
         [HttpGet]
         public async Task<ActionResult<List<Category>>> GetCategories()
         {
@@ -31,6 +35,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Add a category
+        /// </summary>
+        /// <param name="category">The category to add</param>
+        /// <returns>The added category</returns>
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory([FromBody] Category category)
         {
@@ -45,6 +54,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete a category
+        /// </summary>
+        /// <param name="id">The ID of the category to delete</param>
+        /// <returns>No content</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {

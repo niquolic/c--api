@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibraryAPI</name>
+    </assembly>
+    <members>
+        <member name="M:LibraryAPI.Controllers.BooksController.GetBooks(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Boolean)">
+            <summary>
+            Get a list of books
+            </summary>
+            <param name="author">The author of the book</param>
+            <param name="year">The year the book was published</param>
+            <param name="categoryId">The category ID of the book</param>
+            <param name="publisherId">The publisher ID of the book</param>
+            <param name="sortBy">The field to sort by</param>
+            <param name="isDescending">Whether to sort in descending order</param>
+            <returns>A list of books</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.BooksController.GetBookById(System.Int32)">
+            <summary>
+            Get a book by its ID
+            </summary>
+            <param name="id">The ID of the book</param>
+            <returns>The book</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.BooksController.AddBook(LibraryAPI.Models.Book)">
+            <summary>
+            Add a book
+            </summary>
+            <param name="book">The book to add</param>
+            <returns>The added book</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.BooksController.UpdateBook(System.Int32,LibraryAPI.Models.Book)">
+            <summary>
+            Update a book
+            </summary>
+            <param name="id">The ID of the book</param>
+            <param name="book">The updated book</param>
+            <returns>No content</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.BooksController.DeleteBook(System.Int32)">
+            <summary>
+            Delete a book
+            </summary>
+            <param name="id">The ID of the book</param>
+            <returns>No content</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.CategoriesController.GetCategories">
+            <summary>
+            Get a list of categories
+            </summary>
+            <returns>A list of categories</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.CategoriesController.PostCategory(LibraryAPI.Models.Category)">
+            <summary>
+            Add a category
+            </summary>
+            <param name="category">The category to add</param>
+            <returns>The added category</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.CategoriesController.DeleteCategory(System.Int32)">
+            <summary>
+            Delete a category
+            </summary>
+            <param name="id">The ID of the category to delete</param>
+            <returns>No content</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.LoanController.AddLoan(LibraryAPI.Models.Loan)">
+            <summary>
+            Add a loan
+            </summary>
+            <param name="loan">The loan to add</param>
+            <returns>The added loan</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.LoanController.ReturnLoan(System.Int32,System.DateTime)">
+            <summary>
+            Update a loan with the return date
+            </summary>
+            <param name="id">The ID of the loan</param>
+            <param name="returnDate">The return date</param>
+        </member>
+        <member name="M:LibraryAPI.Controllers.LoanController.GetLoans(System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime})">
+            <summary>
+            Get a list of loans
+            </summary>
+            <param name="borrowerName">The name of the borrower</param>
+            <param name="bookId">The ID of the book</param>
+            <param name="borrowDate">The borrow date</param>
+            <returns>A list of loans</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.PublishersController.GetPublishers">
+            <summary>
+            Get a list of publishers
+            </summary>
+            <returns>A list of publishers</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.PublishersController.PostPublisher(LibraryAPI.Models.Publisher)">
+            <summary>
+            Add a publisher
+            </summary>
+            <param name="publisher">The publisher to add</param>
+            <returns>The added publisher</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.PublishersController.DeletePublisher(System.Int32)">
+            <summary>
+            Delete a publisher
+            </summary>
+            <param name="id">The ID of the publisher to delete</param>
+            <returns>No content</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.UsersController.GetUsers(LibraryAPI.Models.User)">
+            <summary>
+            Get a list of users
+            </summary>
+            <param name="currentUser">The current user</param>
+            <returns>A list of users</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.UsersController.PostUser(LibraryAPI.Models.User)">
+            <summary>
+            Add a user
+            </summary>
+            <param name="user">The user to add</param>
+            <returns>The added user</returns>
+        </member>
+        <member name="M:LibraryAPI.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            Delete a user
+            </summary>
+            <param name="id">The ID of the user to delete</param>
+            <returns>No content</returns>
+        </member>
+        <member name="T:LibraryAPI.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryAPI.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryAPI.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryAPI.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibraryAPI.Migrations.SeedData">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryAPI.Migrations.SeedData.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryAPI.Migrations.SeedData.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryAPI.Migrations.SeedData.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

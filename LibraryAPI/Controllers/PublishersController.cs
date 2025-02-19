@@ -17,6 +17,10 @@ namespace LibraryAPI.Controllers
             _publisherService = publisherService;
         }
 
+        /// <summary>
+        /// Get a list of publishers
+        /// </summary>
+        /// <returns>A list of publishers</returns>
         [HttpGet]
         public async Task<ActionResult<List<Publisher>>> GetPublishers()
         {
@@ -31,6 +35,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Add a publisher
+        /// </summary>
+        /// <param name="publisher">The publisher to add</param>
+        /// <returns>The added publisher</returns>
         [HttpPost]
         public async Task<ActionResult<Publisher>> PostPublisher([FromBody] Publisher publisher)
         {
@@ -45,6 +54,11 @@ namespace LibraryAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete a publisher
+        /// </summary>
+        /// <param name="id">The ID of the publisher to delete</param>
+        /// <returns>No content</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePublisher(int id)
         {

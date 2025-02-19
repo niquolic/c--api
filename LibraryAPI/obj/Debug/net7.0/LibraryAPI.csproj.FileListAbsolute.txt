@@ -21,3 +21,5 @@
 /Users/nicolasdebruycker/Documents/Cours/WebTech 5ème année/C#/c#-api/LibraryAPI/obj/Debug/net7.0/LibraryAPI.dll
 /Users/nicolasdebruycker/Documents/Cours/WebTech 5ème année/C#/c#-api/LibraryAPI/obj/Debug/net7.0/refint/LibraryAPI.dll
 /Users/nicolasdebruycker/Documents/Cours/WebTech 5ème année/C#/c#-api/LibraryAPI/obj/Debug/net7.0/LibraryAPI.pdb
+/Users/nicolasdebruycker/Documents/Cours/WebTech 5ème année/C#/c#-api/LibraryAPI/bin/Debug/net7.0/LibraryAPI.xml
+/Users/nicolasdebruycker/Documents/Cours/WebTech 5ème année/C#/c#-api/LibraryAPI/obj/Debug/net7.0/LibraryAPI.xml
